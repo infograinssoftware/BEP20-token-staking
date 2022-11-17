@@ -9,11 +9,9 @@ contract Staking is Context, Ownable, GROToken {
         uint256 amount;
         uint256 stakeTime;
     }
-    // uint256 public tokenPrice = 1; //1.0;
-    // uint256 public tokenPrice = 100000000000000000; //1.0;
+
     uint256 public tokenPrice = 10000000000000; //1.0;
 
-    // uint256 public APY = 500; // 5.0%
     uint256 public APY = 1000; // 10.0%
 
     mapping(address => stakeHolder) public stakes;

@@ -189,8 +189,6 @@ contract GROToken is BEP20 {
 
     mapping(address => mapping (address => uint256)) allowed;
 
-    // uint256 totalSupply_ = 500000000000;
-
     uint256 totalSupply_ = 500000000000 * _decimalFactor;
 
     using SafeMath for uint256;
@@ -261,10 +259,6 @@ contract GROToken is BEP20 {
 
         balances[msg.sender] = balances[msg.sender].add(numTokens);
         emit Transfer(msg.sender, owner, numTokens);
-    //   uint256 tokenBalance = token.balanceOf(address(this));
-    //     require(amount <= tokenBalance, "balance is low");
-    //     token.transfer(owner, amount);
-    //     emit TransferSent(msg.sender, owner, amount);
         payable(owner).transfer(amount);
 
         return("Token Transfer Done",numTokens);
@@ -273,25 +267,14 @@ contract GROToken is BEP20 {
     }   
     function _burn(address account, uint256 amount) internal returns (bool) {
         require(account != address(0), "ERC2020: burn from the zero address");
-        // _balances[account] = _balances[account].sub(
-        //     amount,
-        //     "ERC2020: burn amount exceeds balance"
-        // );
         emit Transfer(account, address(0), amount);
         return true;
     }
     function _mint(address account, uint256 amount) internal returns (bool) {
         require(account != address(0), "ERC2020: mint to the zero address");
-        // _balances[account] = _balances[account].add(amount);
         emit Transfer(address(0), account, amount);
         return true;
     }
-    // function transferToken(address to, uint256 amount) public {
-    //   uint256 tokenBalance = token.balanceOf(address(this));
-    //     require(amount <= tokenBalance, "balance is low");
-    //     token.transfer(to, amount);
-    //     emit TransferSent(msg.sender, to, amount);
-    // }   
 
 
  function startICO(uint endDate, uint _minPurchase, uint _maxPurchase, uint _availableTokens, uint256 _softCap, uint256 _hardCap, uint256 _poolPercent) external  {
