@@ -1,4 +1,4 @@
-# ERC20-token-staking
+# BEP20-token-staking
 
 ## GROToken
 GROToken is a limited supply Ethereum Asset
