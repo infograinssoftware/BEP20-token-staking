@@ -164,7 +164,6 @@ interface BEP20 {
     event Approval(address indexed owner, address indexed spender, uint256 value);
 }
 
-
 contract GROToken is BEP20 {
 
     event Bought(uint256 amount);
